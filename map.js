@@ -1,12 +1,14 @@
 
-function map(arr, func) {
-    // skapa en ny tom array av samma längd som arr
+    function map(arr, func) {
+        const newArray = new Array(arr.length)
+        
+        for (let i = 0; i < arr.length; i++) {
+            newArray[i] = func(arr[i])
+        }
+    
+        return newArray
+    }
 
-    // för varje element i arr
-    //      newArray[j] = func(arr[j])
-
-    // returnera den nya arrayen
-}
 
 // Test 1
 console.log('\nTEST 1')
@@ -24,3 +26,7 @@ console.log(stringArray)    // ['boll', 'häst', 'flygplan']
 
 // Test 3 - GÖR ETT EGET TEST HÄR
 console.log('\nTEST 3')
+const StringArray = ['BOLL', 'HÄST', 'FLYGPLAN']
+const NewStringArray = map(StringArray, str => str.toLowerCase())
+console.log(NewStringArray) // ['boll', 'häst', 'flygplan']
+console.log(StringArray)    // ['BOLL', 'HÄST', 'FLYGPLAN']
